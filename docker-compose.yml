@@ -2,15 +2,17 @@ version: '3'
 services:
   nginx:
     image: nginx:latest
+    ports:
+      - "8080:80"
     volumes:
       - type: volume
         source: smb-share
-        target: /usr/share/nginx/html  # Mount SMB share to NGINX web root
+        target: /usr/share/nginx/html
         volume:
           nocopy: true
-    volumes:
-      smb-share:
-        driver_opts:
-          type: cifs
-          o: vers=2.0,guest  # Use SMB v2.0 and allow guest access
-          device: "//192.168.1.178/share"
+volumes:
+  smb-share:
+    driver_opts:
+      type: cifs
+      o: vers=2.0,guest
+      device: "//<SMB_SERVER_IP>/<SHARE_NAME>"
