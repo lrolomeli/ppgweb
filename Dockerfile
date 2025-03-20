@@ -16,4 +16,5 @@ RUN mkdir -p /mnt/share
 
 RUN echo "//192.168.1.178/share /mnt/share cifs vers=2.0 0 0" >> /etc/fstab
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
+CMD mount -a && nginx -g 'daemon off;'
