@@ -39,7 +39,7 @@ server {
 	# include snippets/snakeoil.conf;
 
 	#root /var/www/html;
-	root "/mnt/smb_share/Central de Documentos PPG/PPG-Web-App";
+	root "/usr/share/nginx/html/Central de Documentos PPG/PPG-Web-App";
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;

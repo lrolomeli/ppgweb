@@ -9,6 +9,7 @@ services:
         target: /usr/share/nginx/html
         volume:
           nocopy: true
+      - ./default:/etc/nginx/sites-available/default  # Mount custom config
 volumes:
   smb-share:
     driver_opts:
