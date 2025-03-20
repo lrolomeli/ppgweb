@@ -10,6 +10,7 @@ services:
         volume:
           nocopy: true
       - ./default.conf:/etc/nginx/conf.d/default.conf  # Mount custom config
+      - /path/to/.htpasswd:/etc/nginx/.htpasswd  # Mount .htpasswd file
 volumes:
   smb-share:
     driver_opts:
